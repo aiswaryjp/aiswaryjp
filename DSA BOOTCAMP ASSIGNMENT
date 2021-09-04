@@ -121,6 +121,102 @@ int main(){
    return 0;
 }
 
+Q6. Print this pattern using loops
+For n=5
+	    *
+	   * *
+	  * * *
+	 * * * *
+	* * * * *
+
+// C++ code to demonstrate star pattern
+#include <iostream>
+using namespace std;
+ 
+// Function to demonstrate printing pattern
+void triangle(int n)
+{
+    // number of spaces
+    int k = 2 * n - 2;
+ 
+    // Outer loop to handle number of rows
+    // n in this case
+    for (int i = 0; i < n; i++) {
+ 
+        // Inner loop to handle number spaces
+        // values changing acc. to requirement
+        for (int j = 0; j < k; j++)
+            cout << " ";
+ 
+        // Decrementing k after each loop
+        k = k - 1;
+ 
+        // Inner loop to handle number of columns
+        // values changing acc. to outer loop
+        for (int j = 0; j <= i; j++) {
+            // Printing stars
+            cout << "* ";
+        }
+ 
+        // Ending line after each row
+        cout << endl;
+    }
+}
+ 
+// Driver Code
+int main()
+{
+    int n = 5;
+   
+      // Function Call
+    triangle(n);
+    return 0;
+}
+
+Q7.Write a program that takes n elements from the user and displays the second largest element of an array.
+#include <iostream>
+using namespace std;
+int main(){
+   int n, num[50], largest, second;
+   cout<<"Enter number of elements: ";
+   cin>>n;
+   for(int i=0; i<n; i++){
+      cout<<"Enter Array Element"<<(i+1)<<": ";
+      cin>>num[i];
+   }
+   /* Here we are comparing first two elements of the
+    * array, and storing the largest one in the variable
+    * "largest" and the other one to "second" variable.
+    */
+   if(num[0]<num[1]){ 
+      largest = num[1];
+      second = num[0];
+   }
+   else{ 
+      largest = num[0];
+      second = num[1];
+   }
+   for (int i = 2; i< n ; i ++) {
+      /* If the current array element is greater than largest
+       * then the largest is copied to "second" and the element
+       * is copied to the "largest" variable.
+       */
+      if (num[i] > largest) {
+         second = largest;
+         largest = num[i];
+      }
+      /* If current array element is less than largest but greater
+       * then second largest ("second" variable) then copy the
+       * element to "second"
+       */
+      else if (num[i] > second && num[i] != largest) {
+         second = num[i];
+      }
+   }
+   cout<<"Second Largest Element in array is: "<<second;
+   return 0;
+}
+
 
    
 
