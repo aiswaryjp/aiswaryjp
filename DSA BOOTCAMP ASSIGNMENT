@@ -1,0 +1,128 @@
+Q1. Write a program to Swap to two numbers.
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int num1, num2, temp;
+    cout<<"Enter 1st Number: "; 
+    cin>>num1;
+    cout<<"Enter 2nd Number: "; 
+    cin>>num2;
+
+    //displaying numbers before swapping
+    cout<<"Before Swapping: First Number: "<<num1<<" Second Number: "<<num2;
+
+    //swapping
+    temp=num1;
+    num1=num2;
+    num2=temp;
+
+    //displaying numbers after swapping
+    cout<<"\nAfter Swapping: First Number: "<<num1<<" Second Number: "<<num2;
+    return 0;
+}
+
+Q2. Write a program to find the largest number among three numbers entered by the user.
+#include <iostream>
+using namespace std;
+int main()
+{    
+    float n1, n2, n3;
+    cout << "Enter three numbers: ";
+    cin >> n1 >> n2 >> n3;
+    if(n1 >= n2 && n1 >= n3)
+    {
+        cout << "Largest number: " << n1;
+    }
+    if(n2 >= n1 && n2 >= n3)
+    {
+        cout << "Largest number: " << n2;
+    }
+    if(n3 >= n1 && n3 >= n2) {
+        cout << "Largest number: " << n3;
+    }
+    return 0;
+}
+Q3.Write a program to check whether a year entered by a user is Leap year or not.
+#include <iostream>
+using namespace std;
+
+int main() {
+    int year;
+
+    cout << "Enter a year: ";
+    cin >> year;
+
+    if (year % 4 == 0) {
+        if (year % 100 == 0) {
+            if (year % 400 == 0)
+                cout << year << " is a leap year.";
+            else
+                cout << year << " is not a leap year.";
+        }
+        else
+            cout << year << " is a leap year.";
+    }
+    else
+        cout << year << " is not a leap year.";
+
+    return 0;
+}
+Q4. Write a program to display Fibonacci Series upto nth term. (Using loops)
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, t1 = 0, t2 = 1, nextTerm = 0;
+
+    cout << "Enter the number of terms: ";
+    cin >> n;
+
+    cout << "Fibonacci Series: ";
+
+    for (int i = 1; i <= n; ++i) {
+        // Prints the first two terms.
+        if(i == 1) {
+            cout << t1 << ", ";
+            continue;
+        }
+        if(i == 2) {
+            cout << t2 << ", ";
+            continue;
+        }
+        nextTerm = t1 + t2;
+        t1 = t2;
+        t2 = nextTerm;
+        
+        cout << nextTerm << ", ";
+    }
+    return 0;
+}
+Q5. Write a program to check whether a number is Prime or Not.
+#include <iostream>
+using namespace std;
+int main(){
+   int num;
+   bool flag = true;
+   cout<<"Enter any number(should be positive integer): ";
+   cin>>num;
+
+   for(int i = 2; i <= num / 2; i++) {
+      if(num % i == 0) {
+         flag = false;
+         break;
+      }
+   }
+   if (flag==true)
+      cout<<num<<" is a prime number";
+   else
+      cout<<num<<" is not a prime number";
+   return 0;
+}
+
+
+   
+
+
+
